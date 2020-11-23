@@ -4,5 +4,10 @@
  * @returns {string}
  */
 function ucFirst(str) {
-  // ваш код...
+  let newStr = "";
+  
+  if (str != "" && str != null) {
+    newStr = str[0].toUpperCase() + str.slice(1);
+  }
+  return newStr;
 }
