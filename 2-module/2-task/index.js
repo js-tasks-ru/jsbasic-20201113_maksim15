@@ -4,5 +4,10 @@
  * @returns {Boolean}
  */
 function isEmpty(obj) {
-  // ваш код...
+  let checkObj = true;
+  
+  for (let key in obj) {
+    checkObj = false;
+  }
+  return checkObj;
 }
