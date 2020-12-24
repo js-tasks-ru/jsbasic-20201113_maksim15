@@ -25,7 +25,11 @@ export default class ProductGrid {
       // Условия для фильтров - если условие выполняется, то продукт не попадает под фильтр (пропускается)
       if (this.filters.noNuts && product.nuts) { continue; }
       if (this.filters.vegeterianOnly && !product.vegeterian) { continue; }
-      if (!!this.filters.maxSpiciness && product.spiciness > this.filters.maxSpiciness) { continue; }
+      if (this.filters.maxSpiciness == 0 || product.spiciness == this.filters.maxSpiciness) {
+        if (!this.filters.maxSpiciness && product.spiciness !== this.filters.maxSpiciness) { continue; }
+      } else {
+        if (!!this.filters.maxSpiciness && product.spiciness > this.filters.maxSpiciness) { continue; }
+      }
       if (this.filters.category && product.category != this.filters.category) { continue; }
 
       let card = new ProductCard(product);
