@@ -92,6 +92,7 @@ export default class Main {
           noNuts: event.target.checked // новое значение чекбокса 'nuts-checkbox'
         });
       });
+      
       let vegeterianCheckbox = document.getElementById('vegeterian-checkbox');
       vegeterianCheckbox.addEventListener('change', function (event) {
         productsGrid.updateFilter({
